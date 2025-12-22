@@ -13,7 +13,7 @@ type HeaderProps = {
 
 const Header = ({ onMenuClick, onSearchClick, onBagClick }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <header className="h-[46px] sticky top-0 z-40 w-full border-b border-neutral-200 bg-white/90 backdrop-blur md:h-[64px]">
       <div className="relative mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 md:h-20 md:px-6">
         {/* Left side: hamburger (mobile) */}
         <button
@@ -36,7 +36,7 @@ const Header = ({ onMenuClick, onSearchClick, onBagClick }: HeaderProps) => {
         </div>
 
         {/* Desktop nav – only visible from md and up */}
-        <nav className="hidden flex-1 items-center justify-center gap-6 text-xs font-medium tracking-[0.3em] md:flex">
+        <nav className="hidden flex-1 ml-[3em] gap-6 text-xs font-medium tracking-[0.3em] md:flex">
           <button
             type="button"
             className="uppercase text-neutral-900 hover:underline"

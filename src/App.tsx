@@ -2,6 +2,7 @@
 import './App.css'
 
 import Header from './components/layout/Header';
+import HeroSection from './pages/homePage/sections/HeroSection';
 
 function App() {
   
@@ -19,6 +20,12 @@ function App() {
           console.log('Bag clicked')
         }}
       />
+
+      <HeroSection 
+      onSerachClick={() => {
+        console.log('Hero Search Clicked')
+      }}/>
+
       <div className='p-6 text-2xl font-bold'>
         Epicure
       </div>
