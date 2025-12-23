@@ -1,6 +1,6 @@
-//import { CardProps } from "@/components/card/card";
-//import { CardType } from "@/components/card/card";
-//import { IconType } from "@/components/card/dish-card-icons";
+import { CardType, IconType } from "../types/cardTypes";
+import type { CardProps, Chef } from "../types/cardTypes";
+
 
 export const restaurants: CardProps[] = [
     {
@@ -169,66 +169,57 @@ export const dishes: CardProps[] = [
     },
 ];
 
-export const chefs: CardProps[] = [
+export const chefs: Chef[] = [
     {
         id: "c1",
-        type: CardType.CHEF,
         name: "Asaf Granit",
         image: "/images/chefs/asaf-granit.png",
         description: "Mediterranean cuisine pioneer",
     },
     {
         id: "c2",
-        type: CardType.CHEF,
         name: "Aviv Moshe",
         image: "/images/chefs/aviv-moshe.png",
         description: "Chef of OCD, fine dining expert",
     },
     {
         id: "c3",
-        type: CardType.CHEF,
         name: "Yuval Ben Neriah",
         image: "/images/chefs/yuval-ben-neriah.png",
         description: "Asian fusion master",
     },
     {
         id: "c4",
-        type: CardType.CHEF,
         name: "Yossi Shitrit",
         image: "/images/chefs/yossi-shitrit.png",
         description: "Modern Tel Aviv cuisine",
     },
     {
         id: "c5",
-        type: CardType.CHEF,
         name: "Eyal Shani",
         image: "/images/chefs/eyal-shani.jpg",
         description: "Classic techniques, modern flavors",
     },
     {
         id: "c6",
-        type: CardType.CHEF,
         name: "Meir Adoni",
         image: "/images/chefs/meir-adoni.png",
         description: "Bold flavors and creative plates",
     },
     {
         id: "c7",
-        type: CardType.CHEF,
         name: "Omer Miller",
         image: "/images/chefs/omer-miller.png",
         description: "Seafood specialist",
     },
     {
         id: "c8",
-        type: CardType.CHEF,
         name: "Shahaf Shabtay",
         image: "/images/chefs/shahaf-shabtay.png",
         description: "French & Middle Eastern fusion",
     },
     {
         id: "c9",
-        type: CardType.CHEF,
         name: "Nitzan Raz",
         image: "/images/chefs/nitzan-raz.jpg",
         description: "Live-fire cooking expert",

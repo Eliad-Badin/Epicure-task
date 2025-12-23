@@ -1,4 +1,4 @@
-import heroImage from "../../../assets/images/hero-food.png";
+import heroImage from "/images/hero-food.png";
 import searchIcon from "../../../assets/icons/search.svg";
 import { HERO_CARD_TEXT, HERO_SEARCH_PLACEHOLDER } from "../../../utils/Strings";
 
@@ -20,13 +20,13 @@ const HeroSection = ({ onSearchClick }: HeroSectionProps) => {
         {/* Overlay card */}
         <div
           className="
-            absolute left-1/2 top-1/2 w-[335px] max-w-xl
+            absolute left-1/2 top-1/2 w-[90%] max-w-xl
             -translate-x-1/2 -translate-y-1/2
-            rounded-sm bg-white/90 px-4 py-4 shadow-md
-            sm:px-6 sm:py-5
+            bg-white/90 px-4 py-4 shadow-md
+            sm:px-6 sm:py-5 md:w-[776px]
           "
         >
-          <h1 className="text-center text-base font-semibold leading-snug md:text-xl">
+          <h1 className="text-center text-base font-thin leading-snug tracking-[1.97px] md:text-xl">
             {HERO_CARD_TEXT}
           </h1>
 
