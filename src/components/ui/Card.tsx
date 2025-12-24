@@ -91,7 +91,9 @@ const DishCardView = ({ card }: DishCardViewProps) => {
         <h3 className="font-regular font-400 text-[18px] tracking-[2.67px] md:text-[40px]/[47px] md:text-center">
           {card.name}
         </h3>
-
+            <div className="hidden justify-center md:flex">
+                <DishIcons icons={card.icons} />
+            </div>
         <p
           className="
             mt-1 text-[16px]/[20px] font-thin tracking-[1.97px] font-200
@@ -108,8 +110,9 @@ const DishCardView = ({ card }: DishCardViewProps) => {
               md:flex-col md:items-center md:gap-2 md:w-full
             "
           >
-            <DishIcons icons={card.icons} />
-
+            <div className="md:hidden">
+                <DishIcons icons={card.icons} />
+            </div>
             <div
               className="
                 text-xs font-semibold
@@ -161,7 +164,7 @@ type ChefRestaurantCardViewProps = {
 
 const ChefRestaurantCardView = ({ card }: ChefRestaurantCardViewProps) => {
   return (
-    <article className="flex w-[240px] shrink-0 flex-col overflow-hidden rounded-sm bg-card shadow-sm">
+    <article className="flex bg-[#FAF2E8] w-[245px] shrink-0 flex-col overflow-hidden bg-card shadow-sm">
       <img
         src={card.image}
         alt={card.name}
@@ -169,7 +172,7 @@ const ChefRestaurantCardView = ({ card }: ChefRestaurantCardViewProps) => {
       />
 
       <div className="px-3 pb-3 pt-2">
-        <h3 className="text-base font-semibold">{card.name}</h3>
+        <h3 className="font-regular font-400 text-[18px] tracking-[2.67px] md:text-[40px]/[47px] md:text-center">{card.name}</h3>
       </div>
     </article>
   );

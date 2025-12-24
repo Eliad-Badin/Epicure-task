@@ -1,8 +1,8 @@
 import { CardType, IconType } from "../types/cardTypes";
-import type { CardProps, Chef } from "../types/cardTypes";
+import type { CardProps, Chef, RestaurantCard, DishCard } from "../types/cardTypes";
 
 
-export const restaurants: CardProps[] = [
+export const restaurants: RestaurantCard[] = [
     {
         id: "r1",
         type: CardType.RESTAURANT,
@@ -75,10 +75,34 @@ export const restaurants: CardProps[] = [
         rating: 1,
         image: "/images/restaurants/messa-2.jpg",
     },
+        {
+        id: "r10",
+        type: CardType.RESTAURANT,
+        name: "Onza",
+        chef: "Yossi Shitrit",
+        rating: 4,
+        image: "/images/restaurants/messa-2.jpg",
+    },
+        {
+        id: "r11",
+        type: CardType.RESTAURANT,
+        name: "Kitchen Market",
+        chef: "Yossi Shitrit",
+        rating: 1,
+        image: "/images/restaurants/messa-2.jpg",
+    },
+            {
+        id: "r12",
+        type: CardType.RESTAURANT,
+        name: "Mashya",
+        chef: "Yossi Shitrit",
+        rating: 1,
+        image: "/images/restaurants/messa-2.jpg",
+    },
 ];
 
 
-export const dishes: CardProps[] = [
+export const dishes: DishCard[] = [
     {
         id: "d1",
         type: CardType.DISH,
@@ -192,7 +216,7 @@ export const chefs: Chef[] = [
         id: "c4",
         name: "Yossi Shitrit",
         image: "/images/chefs/yossi-shitrit.png",
-        description: "Modern Tel Aviv cuisine",
+        description: "Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit's creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.",
     },
     {
         id: "c5",

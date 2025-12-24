@@ -3,6 +3,9 @@ import HeroSection from "./sections/HeroSection";
 import PopularRestaurantsSection from "./sections/PopularRestaurantsSection";
 import SignatureDishesSection from "./sections/SignatureDishesSection";
 import IconsMeaningSection from "./sections/IconMeaningSection";
+import ChefOfTheWeekSection from "./sections/ChefOfTheWeekSection";
+import AboutUsSection from "./sections/AboutUsSection";
+import Footer from "../../components/layout/Footer";
 
 
 const HomePage = () => {
@@ -22,6 +25,12 @@ const HomePage = () => {
                 <SignatureDishesSection />
 
                 <IconsMeaningSection />
+
+                <ChefOfTheWeekSection />
+
+                <AboutUsSection />
+
+                <Footer />
             </main>
         </div>
     )

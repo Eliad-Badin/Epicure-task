@@ -31,8 +31,9 @@ export type DishCard = BaseCard & {
     icons?: IconType[];
 };
 
-export type ChefRestaurantCard = RestaurantCard & {
+export type ChefRestaurantCard = BaseCard & {
     type: CardType.CHEF_REST;
+    chef: string;
 };
 
 export type Chef = {

@@ -2,8 +2,8 @@ import Card from "../../../components/ui/Card";
 import Carousel from "../../../components/ui/Carousel";
 import { dishes } from "../../../assets/data";
 import type { CardProps } from "../../../types/cardTypes";
-import { SIGNATURE_DISHES, ALL_RESTAURANTS } from "../../../utils/Strings";
-import arrowIcon from "../../../assets/icons/arrow.svg";
+import { SIGNATURE_DISHES } from "../../../utils/Strings";
+import AllRestaurantsLine from "../../../components/layout/AllRestaurantsLine";
 
 const SignatureDishesSection = () => {
     const SignatureDishes = dishes;
@@ -21,14 +21,7 @@ const SignatureDishesSection = () => {
                 />
             </div>
 
-            <div className="flex">
-                <button
-                    type="button"
-                    className="mt-4 text-s font-semibold tracking-[1.25px] hover:underline"
-                >
-                    {ALL_RESTAURANTS} <img src={arrowIcon} alt="&gt %gt" className="inline-block w-4"/>
-                </button>
-            </div>
+            <AllRestaurantsLine />
         </section>
     )
 }
