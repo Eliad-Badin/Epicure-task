@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../../components/layout/Header";
 import HeroSection from "./sections/HeroSection";
 import PopularRestaurantsSection from "./sections/PopularRestaurantsSection";
@@ -6,34 +7,66 @@ import IconsMeaningSection from "./sections/IconMeaningSection";
 import ChefOfTheWeekSection from "./sections/ChefOfTheWeekSection";
 import AboutUsSection from "./sections/AboutUsSection";
 import Footer from "../../components/layout/Footer";
+import BagOverlay from "./sections/BagOverlay";
+import SearchOverlay from "./sections/SearchOverlay";
+import MobileMenu from "./sections/MobileMenu";
 
+type Overlay = "none" | "bag" | "search";
 
 const HomePage = () => {
-    return (
-        <div className="min-h-screen flex justify-center">
-            <main className="w-full">
-                <Header
-                    onMenuClick={() => {console.log("menu pressed")}}
-                    onSearchClick={() => {console.log("search clicked")}}
-                    onBagClick={() => {console.log("bag clicked")}}
-                />
+  const [overlay, setOverlay] = useState<Overlay>("none");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-                <HeroSection onSearchClick={() => {console.log("hero search clicked")}} />
+  const isSearch = overlay === "search";
 
-                <PopularRestaurantsSection />
+  return (
+    <div className="min-h-screen flex justify-center">
+      <main className="w-full relative">
+        <Header
+          mode={isSearch ? "search" : "default"}
+          onMenuClick={() => {
+            console.log("menu pressed");
+            setIsMenuOpen(true);
+          }}
+          onSearchClick={() => {
+            setOverlay("search");
+          }}
+          onBagClick={() => {
+            setOverlay((prev) => (prev === "bag" ? "none" : "bag"));
+          }}
+          onCloseSearch={() => {
+            setOverlay("none");
+          }}
+        />
 
-                <SignatureDishesSection />
+        {isMenuOpen && <MobileMenu onClose={() => setIsMenuOpen(false)} />}
 
-                <IconsMeaningSection />
+        <section className="relative">
+          <HeroSection
+            onSearchClick={() => {
+              setOverlay("search");
+            }}
+          />
 
-                <ChefOfTheWeekSection />
+          {overlay === "bag" && <BagOverlay />}
 
-                <AboutUsSection />
+          {overlay === "search" && <SearchOverlay />}
+        </section>
 
-                <Footer />
-            </main>
-        </div>
-    )
-}
+        <PopularRestaurantsSection />
+
+        <SignatureDishesSection />
+
+        <IconsMeaningSection />
+
+        <ChefOfTheWeekSection />
+
+        <AboutUsSection />
+
+        <Footer />
+      </main>
+    </div>
+  );
+};
 
 export default HomePage;

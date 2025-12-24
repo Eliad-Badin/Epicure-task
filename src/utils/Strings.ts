@@ -17,3 +17,4 @@ export const ABOUT_TEXT_2 = "Lorem ipsum dolor sit amet, consectetur adipiscing 
 export const CONTECT_US = "Contect Us";
 export const TERM_OF_USE = "Terms of Use";
 export const PRIVACY_POLICY = "Privacy Policy";
+export const BAG_EMPTY = "YOUR BAG IS EMPTY"
