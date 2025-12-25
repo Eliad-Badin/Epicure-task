@@ -87,8 +87,8 @@ const DishCardView = ({ card, variant }: DishCardViewProps) => {
   const showIcons = variant === "default";
 
   const wrapperClasses = isRestaurant
-    ? "flex w-full shrink-0 flex-col overflow-hidden rounded-sm bg-[#FAF2E8] shadow-sm"
-    : "flex h-[388px] w-[245px] shrink-0 flex-col overflow-hidden bg-[#FAF2E8] shadow-sm md:h-[654px] md:w-[380px]";
+    ? "flex w-full shrink-0 flex-col overflow-hidden bg-[#FAF2E8]"
+    : "flex h-[388px] w-[245px] shrink-0 flex-col overflow-hidden bg-[#FAF2E8] md:h-[654px] md:w-[380px]";
 
   const imageClasses = isRestaurant
     ? "h-[167px] w-full object-cover md:h-[220px]"
@@ -115,20 +115,35 @@ const DishCardView = ({ card, variant }: DishCardViewProps) => {
 
         <div className="mt-auto pt-2 md:pt-4">
           {isRestaurant ? (
-            // restaurant dish price: price then line to the right
-            <div className="flex items-center gap-3">
-              <span className="flex items-center text-[16px]/[19px] md:text-[24px]/[30px]">
-                <img
-                  src={nisIcom}
-                  alt="₪"
-                  className="mr-1 inline-block h-[11px] w-[8.11px] align-middle md:h-[19px] md:w-[14px]"
-                />
-                <span>{card.price}</span>
-              </span>
-              <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
-            </div>
+            <>
+              {/* mobile: price left, line to the right (unchanged) */}
+              <div className="flex items-center gap-3 md:hidden">
+                <span className="flex items-center text-[16px]/[19px]">
+                  <img
+                    src={nisIcom}
+                    alt="₪"
+                    className="mr-1 inline-block h-[11px] w-[8.11px] align-middle"
+                  />
+                  <span>{card.price}</span>
+                </span>
+                <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
+              </div>
+
+              {/* desktop: price centered with lines on both sides */}
+              <div className="hidden items-center gap-3 md:flex">
+                <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
+                <span className="flex items-center text-[16px]/[19px] md:text-[24px]/[30px]">
+                  <img
+                    src={nisIcom}
+                    alt="₪"
+                    className="mr-1 inline-block h-[11px] w-[8.11px] align-middle md:h-[19px] md:w-[14px]"
+                  />
+                  <span>{card.price}</span>
+                </span>
+                <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
+              </div>
+            </>
           ) : (
-            // default variant: keep your existing mobile/desktop behaviour
             <div className="text-[16px]/[19px] font-regular font-400 md:mt-2 md:h-[30px] md:w-[287px] md:pt-2 md:text-[24px]/[30px] md:font-thin">
               <div className="md:hidden">
                 <img

@@ -10,7 +10,7 @@ const RestaurantHeroSection = ({ restaurant }: RestaurantHeroSectionProps) => {
       <img
         src={restaurant.image}
         alt={restaurant.name}
-        className="h-full w-full object-cover "
+        className="h-full w-full"
       />
     </section>
   );

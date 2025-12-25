@@ -5,7 +5,7 @@ import { NO_DISHES } from "../../../utils/Strings";
 
 type RestaurantDishesSectionProps = {
   restaurantId: string;
-  mealType: MealType | null;             
+  mealType: MealType | null;
   onMealTypeChange: (meal: MealType | null) => void;
 };
 
@@ -16,14 +16,15 @@ const RestaurantDishesSection = ({
 }: RestaurantDishesSectionProps) => {
   const filteredDishes: DishCard[] = dishes.filter((dish) => {
     if (dish.restaurantId !== restaurantId) return false;
-    if (mealType === null) return true;  
+    if (mealType === null) return true;
     return dish.mealType === mealType;
   });
 
   return (
     <section className="pb-12">
-      <div className=" px-4 md:px-8">
-        <div className="flex gap-[21px] text-[18px] font-thin font-200 tracking-[1.92px]">
+      {/* Tabs */}
+      <div className="px-4 md:px-0">
+        <div className="flex justify-start gap-[21px] text-[18px] font-thin font-200 tracking-[1.92px] md:justify-center">
           <MealTab
             label="Breakfast"
             value="breakfast"
@@ -45,13 +46,19 @@ const RestaurantDishesSection = ({
         </div>
       </div>
 
-      <div className="mt-3 space-y-[22px] px-4 md:mt-6 md:space-y-4 md:px-8">
+      <div
+        className="
+          mt-3 space-y-[22px] px-4
+          md:mt-6 md:space-y-0 md:px-0
+          md:grid md:grid-cols-3 lg:grid-cols-4 md:gap-x-6 md:gap-y-8
+        "
+      >
         {filteredDishes.map((dish) => (
-            <Card key={dish.id} card={dish} variant="restaurant" />
+          <Card key={dish.id} card={dish} variant="restaurant" />
         ))}
 
         {filteredDishes.length === 0 && (
-          <p className="mt-4 text-xs tracking-[1.3px] text-neutral-500">
+          <p className="mt-4 text-xs tracking-[1.3px] text-neutral-500 md:col-span-full">
             {NO_DISHES}
           </p>
         )}
