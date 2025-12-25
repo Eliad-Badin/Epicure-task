@@ -9,7 +9,7 @@ type RestaurantInfoSectionProps = {
 const RestaurantInfoSection = ({ restaurant }: RestaurantInfoSectionProps) => {
   return (
     <section className="px-4 py-4 md:px-0 md:py-8">
-      <div className="flex flex-col items-center text-center">
+      <div className="flex flex-col md:items-center md:text-center">
         <h1 className="text-[24px]/[32px] font-regular font-400 tracking-[2.67px] md:text-[32px]/[38px] md:text-[56px]/[64px]">
           {restaurant.name}
         </h1>
