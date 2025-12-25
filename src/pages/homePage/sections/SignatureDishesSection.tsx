@@ -9,7 +9,7 @@ const SignatureDishesSection = () => {
     const SignatureDishes = dishes;
 
     return (
-        <section className="mx-auto mt-8 px-4">
+        <section className="mx-auto mt-15 px-4 max-w-[1185px]">
             <p className="text-[18px]/[35px] font-thin tracking-[1.25px] md:text-center md:text-[30px]">
                 {SIGNATURE_DISHES}
             </p>
@@ -20,8 +20,9 @@ const SignatureDishesSection = () => {
                     renderItem={(item) => <Card card={item} />}
                 />
             </div>
-
-            <AllRestaurantsLine />
+            <div className="md:hidden">
+                <AllRestaurantsLine />
+            </div>
         </section>
     )
 }

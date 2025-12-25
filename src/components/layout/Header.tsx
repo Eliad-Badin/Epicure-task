@@ -3,7 +3,8 @@ import searchIcon from "../../assets/icons/search.svg";
 import bagIcon from "../../assets/icons/bag.svg";
 import userIcon from "../../assets/icons/user.svg";
 import aboutLogo from "../../assets/icons/about-logo.svg";
-import { EPICURE, RESTAURANTS, CHEFS } from "../../utils/Strings";
+import { EPICURE, RESTAURANTS, CHEFS, SEARCH} from "../../utils/Strings";
+import closeIcon from "../../assets/icons/close.svg";
 
 type HeaderMode = "default" | "search";
 
@@ -34,7 +35,7 @@ const Header = ({
             onClick={onCloseSearch}
             className="flex h-8 w-8 items-center justify-center md:hidden"
           >
-            <span className="text-xl">&times;</span>
+            <img src={closeIcon} alt="close" className=""/>
           </button>
         ) : (
           <button
@@ -59,8 +60,8 @@ const Header = ({
         )}
 
         {isSearchMode && (
-          <p className="absolute left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] md:hidden">
-            Search
+          <p className="absolute left-1/2 -translate-x-1/2 font-thin text-[18px] tracking-[1.92px] md:hidden">
+            {SEARCH}
           </p>
         )}
 

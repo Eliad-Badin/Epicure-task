@@ -91,7 +91,7 @@ const DishCardView = ({ card }: DishCardViewProps) => {
         <h3 className="font-regular font-400 text-[18px] tracking-[2.67px] md:text-[40px]/[47px] md:text-center">
           {card.name}
         </h3>
-            <div className="hidden justify-center md:flex">
+            <div className="hidden justify-center my-3 md:flex">
                 <DishIcons icons={card.icons} />
             </div>
         <p
@@ -110,21 +110,23 @@ const DishCardView = ({ card }: DishCardViewProps) => {
               md:flex-col md:items-center md:gap-2 md:w-full
             "
           >
-            <div className="md:hidden">
-                <DishIcons icons={card.icons} />
-            </div>
-            <div
-              className="
-                text-xs font-semibold
-                md:mt-2 md:w-full md:border-t md:border-neutral-200 md:pt-2 md:text-center
-              "
-            >
-              <img
-                src={nisIcom}
-                alt="₪"
-                className="mr-1 inline-block h-[10px] w-[10px] align-middle"
-              />
-              <span>{card.price}</span>
+            <div className="flex flex-col">
+                <div className="md:hidden">
+                    <DishIcons icons={card.icons} />
+                </div>
+                <div
+                className="
+                    text-[16px]/[19px] font-regular font-400
+                    md:mt-2 md:w-full md:border-t md:border-neutral-200 md:pt-2 md:text-center
+                "
+                >
+                <img
+                    src={nisIcom}
+                    alt="₪"
+                    className="mr-1 inline-block h-[11px] w-[8.11px] align-middle"
+                />
+                <span>{card.price}</span>
+                </div>
             </div>
           </div>
         </div>
@@ -145,11 +147,11 @@ const DishIcons = ({ icons }: DishIconsProps) => {
       {icons.map((icon, idx) => {
         switch (icon) {
           case IconType.SPICY:
-            return <img key={idx} src={spicyIcon} alt="Spicy icon" />;
+            return <img key={idx} src={spicyIcon} alt="Spicy icon" className="w-[30px] h-[24px] md:w-[40px] md:h-[31px]" />;
           case IconType.VEGETARIAN:
-            return <img key={idx} src={vegetarianIcon} alt="Vegetarian icon" />;
+            return <img key={idx} src={vegetarianIcon} alt="Vegetarian icon" className="w-[30px] h-[24px] md:w-[40px] md:h-[31px]" />;
           case IconType.VEGAN:
-            return <img key={idx} src={veganIcon} alt="Vegan icon" />;
+            return <img key={idx} src={veganIcon} alt="Vegan icon" className="w-[30px] h-[24px] md:w-[40px] md:h-[31px]" />;
           default:
             return null;
         }
@@ -164,11 +166,11 @@ type ChefRestaurantCardViewProps = {
 
 const ChefRestaurantCardView = ({ card }: ChefRestaurantCardViewProps) => {
   return (
-    <article className="flex bg-[#FAF2E8] w-[245px] shrink-0 flex-col overflow-hidden bg-card shadow-sm">
+    <article className="flex bg-[#FAF2E8] w-[245px] h-[233.34px] shrink-0 flex-col overflow-hidden bg-card shadow-sm md:w-[231px] md:h-[357px]">
       <img
         src={card.image}
         alt={card.name}
-        className="h-[160px] w-full object-cover"
+        className="h-[152.3px] w-full object-crop md:h-[231px]"
       />
 
       <div className="px-3 pb-3 pt-2">

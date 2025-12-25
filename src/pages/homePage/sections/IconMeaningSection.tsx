@@ -19,7 +19,7 @@ function IconItem({ icon, label }: IconItemProps) {
 
 function IconsMeaningSection() {
   return (
-    <section className="bg-[#FAFAFA] py-12 md:py-16">
+    <section className="mt-15 bg-[#FAFAFA] py-12 md:py-16">
 
       <div className="mx-auto w-full max-w-[375px] md:max-w-[1120px] px-4 md:px-0">
         <h2 className="text-center text-[18px]/[35px] font-thin tracking-[1.25px] md:text-[30px]">

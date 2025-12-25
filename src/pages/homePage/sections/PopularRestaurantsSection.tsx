@@ -9,7 +9,7 @@ const PopularRestaurantsSection = () => {
     const popularRestaurants = restaurants;
 
     return (
-        <section className="mx-auto mt-8 px-4">
+        <section className="mx-auto mt-15 px-4 max-w-[1185px]">
             <p className="text-[18px]/[35px] font-thin tracking-[1.25px] md:text-center md:text-[30px]">
                 {POPULAR_RESTAURANTS}
             </p>
@@ -20,8 +20,9 @@ const PopularRestaurantsSection = () => {
                     renderItem={(item) => <Card card={item} />}
                 />
             </div>
-
-            <AllRestaurantsLine />
+            <div className="md:place-items-end">
+                <AllRestaurantsLine />
+            </div>
         </section>
     );
 };

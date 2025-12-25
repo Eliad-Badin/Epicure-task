@@ -10,7 +10,7 @@ import {
     type Chef
 
 } from "../../../types/cardTypes"
-import { CHEF_OF_WEEK } from "../../../utils/Strings";
+import { CHEF_OF_WEEK, RESTAURANTS } from "../../../utils/Strings";
 import AllRestaurantsLine from "../../../components/layout/AllRestaurantsLine";
 
 
@@ -34,7 +34,7 @@ const ChefOfTheWeekSection = () => {
     const chefFirstName = chef.name.substring(0, index);
 
     return (
-        <section className="mx-auto mt-8 px-4">
+        <section className="mx-auto max-w-[1185px] mt-15 px-4">
             <h2 className="text-center text-[18px]/[35px] font-thin tracking-[1.25px] md:text-[30px]">
                 {CHEF_OF_WEEK}
             </h2>
@@ -42,16 +42,18 @@ const ChefOfTheWeekSection = () => {
             <div>
                 <ChefCard chef={chef} />
             </div>
-            <div>
-                <h3>{chefFirstName}'s Restaurants</h3>
-                <div>
+            <div className="py-4 max-w-[724px]">
+                <h3 className="font-thin font-200 text-[16px]/[25px] tracking-[1.25px] md:text-[30px]/[35px]">{chefFirstName}'s {RESTAURANTS}</h3>
+                <div className="my-4 gap-[16px]">
                     <Carousel<CardProps>
                         items={chefRestCards}
                         renderItem={(card) => <Card card={card} />}
                         />
                 </div>
             </div>
-            <AllRestaurantsLine />
+            <div className="md:hidden">
+                <AllRestaurantsLine />
+            </div>
         </section>
     )
 }
