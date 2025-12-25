@@ -5,6 +5,7 @@ import userIcon from "../../assets/icons/user.svg";
 import aboutLogo from "../../assets/icons/about-logo.svg";
 import { EPICURE, RESTAURANTS, CHEFS, SEARCH} from "../../utils/Strings";
 import closeIcon from "../../assets/icons/close.svg";
+import { Link } from "react-router-dom";
 
 type HeaderMode = "default" | "search";
 
@@ -51,7 +52,7 @@ const Header = ({
         {!isSearchMode && (
           <div className="absolute left-1/2 flex -translate-x-1/2 items-center md:static md:translate-x-0 md:gap-2">
             <div className="flex h-8 w-8 items-center justify-center">
-              <img src={aboutLogo} alt="Epicure logo" />
+              <Link to="/"><img src={aboutLogo} alt="Epicure logo" /></Link>
             </div>
             <span className="hidden text-sm font-semibold tracking-[0.35em] md:inline">
               {EPICURE}

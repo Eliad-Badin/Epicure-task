@@ -24,11 +24,15 @@ export type RestaurantCard = BaseCard & {
     rating: number;
 };
 
+export type MealType = "breakfast" | "lunch" | "dinner";
+
 export type DishCard = BaseCard & {
     type: CardType.DISH;
     description: string;
     price: number;
     icons?: IconType[];
+    restaurantId: string;
+    mealType: MealType;
 };
 
 export type ChefRestaurantCard = BaseCard & {

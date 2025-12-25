@@ -19,3 +19,6 @@ export const TERM_OF_USE = "Terms of Use";
 export const PRIVACY_POLICY = "Privacy Policy";
 export const BAG_EMPTY = "YOUR BAG IS EMPTY"
 export const SEARCH = "Search";
+export const RESTAURANT_PAGE_ROUTE = "/restaurants/:id"
+export const NO_DISHES = "No dishes available for this meal.";
+export const OPEN_NOW = "Open now";
