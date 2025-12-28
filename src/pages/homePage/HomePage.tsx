@@ -25,7 +25,6 @@ const HomePage = () => {
         <Header
           mode={isSearch ? "search" : "default"}
           onMenuClick={() => {
-            console.log("menu pressed");
             setIsMenuOpen(true);
           }}
           onSearchClick={() => {

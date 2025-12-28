@@ -23,3 +23,4 @@ export const RESTAURANT_PAGE_ROUTE = "/restaurants/:id"
 export const NO_DISHES = "No dishes available for this meal.";
 export const OPEN_NOW = "Open now";
 export const RESTAURANT_NOT_FOUND = "Restaurant not found."
+export const ORDER_HISTORY = "ORDER HISTORY"
