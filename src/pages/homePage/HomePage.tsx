@@ -28,7 +28,7 @@ const HomePage = () => {
             setIsMenuOpen(true);
           }}
           onSearchClick={() => {
-            setOverlay("search");
+            setOverlay((prev) => (prev === "search" ? "none" : "search"));
           }}
           onBagClick={() => {
             setOverlay((prev) => (prev === "bag" ? "none" : "bag"));

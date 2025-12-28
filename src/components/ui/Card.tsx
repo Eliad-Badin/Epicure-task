@@ -79,7 +79,7 @@ const RestaurantCardView = ({ card }: RestaurantCardViewProps) => {
 
 type DishCardViewProps = {
   card: DishCard;
-  variant: CardVariant; // "default" | "restaurant"
+  variant: CardVariant;
 };
 
 const DishCardView = ({ card, variant }: DishCardViewProps) => {
@@ -114,9 +114,14 @@ const DishCardView = ({ card, variant }: DishCardViewProps) => {
         </p>
 
         <div className="mt-auto pt-2 md:pt-4">
+          {showIcons && (
+            <div className="mb-2 md:hidden">
+              <DishIcons icons={card.icons} />
+            </div>
+          )}
+
           {isRestaurant ? (
             <>
-              {/* mobile: price left, line to the right (unchanged) */}
               <div className="flex items-center gap-3 md:hidden">
                 <span className="flex items-center text-[16px]/[19px]">
                   <img
@@ -129,7 +134,6 @@ const DishCardView = ({ card, variant }: DishCardViewProps) => {
                 <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
               </div>
 
-              {/* desktop: price centered with lines on both sides */}
               <div className="hidden items-center gap-3 md:flex">
                 <div className="h-[1px] flex-1 bg-[#D6D6D6]" />
                 <span className="flex items-center text-[16px]/[19px] md:text-[24px]/[30px]">
@@ -168,17 +172,12 @@ const DishCardView = ({ card, variant }: DishCardViewProps) => {
               </div>
             </div>
           )}
-
-          {showIcons && (
-            <div className="mt-2 md:hidden">
-              <DishIcons icons={card.icons} />
-            </div>
-          )}
         </div>
       </div>
     </article>
   );
 };
+
 
 
 
@@ -242,7 +241,7 @@ const ChefRestaurantCardView = ({ card }: ChefRestaurantCardViewProps) => {
       />
 
       <div className="px-3 pb-3 pt-2">
-        <h3 className="font-regular font-400 text-[18px] tracking-[2.67px] md:text-center md:text-[40px]/[47px]">
+        <h3 className="font-regular text-[18px] tracking-[2.67px] md:text-center md:text-[40px]/[47px]">
           {card.name}
         </h3>
       </div>

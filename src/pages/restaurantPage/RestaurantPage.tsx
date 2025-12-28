@@ -31,7 +31,9 @@ const RestaurantPage = () => {
           <Header
             mode={isSearch ? "search" : "default"}
             onMenuClick={() => setIsMenuOpen(true)}
-            onSearchClick={() => setOverlay("search")}
+            onSearchClick={() =>
+                setOverlay((prev) => (prev === "search" ? "none" : "search"))
+            }
             onBagClick={() =>
               setOverlay((prev) => (prev === "bag" ? "none" : "bag"))
             }
