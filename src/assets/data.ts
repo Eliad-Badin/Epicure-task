@@ -62,10 +62,10 @@ export const restaurants: RestaurantCard[] = [
     {
         id: "r8",
         type: CardType.RESTAURANT,
-        name: "Kab Kem",
+        name: "Kab Kem Diner",
         chef: "Yariv Malili",
         rating: 2,
-        image: "/images/restaurants/kab-kem.jpg",
+        image: "/images/restaurants/kab-kem-diner.png",
     },
     {
         id: "r9",

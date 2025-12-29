@@ -1,12 +1,14 @@
 import heroImage from "/images/hero-food.png";
 import searchIcon from "../../../assets/icons/search.svg";
 import { HERO_CARD_TEXT, SEARCH_PLACEHOLDER } from "../../../utils/Strings";
+import { useState } from "react";
 
 type HeroSectionProps = {
-  onSearchClick?: () => void; // fixed name + made optional
+  onSearchClick?: (term: string) => void; 
 };
 
 const HeroSection = ({ onSearchClick }: HeroSectionProps) => {
+  const [searchText, setSearchText] = useState("");
   return (
     <section className="w-full">
       <div className="relative mx-auto">
@@ -38,7 +40,7 @@ const HeroSection = ({ onSearchClick }: HeroSectionProps) => {
             <button
               type="button"
               aria-label="Hero Search Button"
-              onClick={onSearchClick}
+              onClick={() => onSearchClick?.(searchText)}
               className="flex h-4 w-4 items-center justify-center hover:"
             >
               <img
@@ -51,6 +53,8 @@ const HeroSection = ({ onSearchClick }: HeroSectionProps) => {
             <input
               type="text"
               placeholder={SEARCH_PLACEHOLDER}
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
               className="
                 ml-3 flex-1 border-none bg-transparent
                 font-thin text-[12px] tracking-[1.29px] md:text-[24px] outline-none 

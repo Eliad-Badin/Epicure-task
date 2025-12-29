@@ -22,7 +22,6 @@ const RestaurantDishesSection = ({
 
   return (
     <section className="pb-12">
-      {/* Tabs */}
       <div className="px-4 md:px-0">
         <div className="flex justify-start gap-[21px] text-[18px] font-thin font-200 tracking-[1.92px] md:justify-center">
           <MealTab

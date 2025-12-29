@@ -16,6 +16,7 @@ type Overlay = "none" | "bag" | "search";
 const HomePage = () => {
   const [overlay, setOverlay] = useState<Overlay>("none");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const isSearch = overlay === "search";
 
@@ -42,14 +43,15 @@ const HomePage = () => {
 
         <section className="relative">
           <HeroSection
-            onSearchClick={() => {
-              setOverlay("search");
+            onSearchClick={(term) => {
+                setSearchText(term);
+                setOverlay("search");
             }}
           />
 
           {overlay === "bag" && <BagOverlay />}
 
-          {overlay === "search" && <SearchOverlay />}
+          {overlay === "search" && <SearchOverlay initialQuery={searchText} />}
         </section>
 
         <PopularRestaurantsSection />

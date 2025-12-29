@@ -1,5 +1,6 @@
 export const EPICURE = "EPICURE";
 export const RESTAURANTS = "Restaurants";
+export const DISHES = "Dishes";
 export const CHEFS = "Chefs";
 export const HERO_CARD_TEXT = "Epicure works with the top chef restaurants in Tel Aviv";
 export const SEARCH_PLACEHOLDER = "Search for restaurant, cuisine, chef";
@@ -24,3 +25,4 @@ export const NO_DISHES = "No dishes available for this meal.";
 export const OPEN_NOW = "Open now";
 export const RESTAURANT_NOT_FOUND = "Restaurant not found."
 export const ORDER_HISTORY = "ORDER HISTORY"
+export const NO_RESULTS = "No Results Found.";
