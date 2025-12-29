@@ -233,18 +233,20 @@ type ChefRestaurantCardViewProps = {
 
 const ChefRestaurantCardView = ({ card }: ChefRestaurantCardViewProps) => {
   return (
-    <article className="flex h-[233.34px] w-[245px] shrink-0 flex-col overflow-hidden bg-[#FAF2E8] bg-card shadow-sm md:h-[357px] md:w-[231px]">
-      <img
-        src={card.image}
-        alt={card.name}
-        className="h-[152.3px] w-full object-crop md:h-[231px]"
-      />
+    <Link to={`/restaurants/${card.id}`} className="block">
+        <article className="flex h-[233.34px] w-[245px] shrink-0 flex-col overflow-hidden bg-[#FAF2E8] bg-card shadow-sm md:h-[357px] md:w-[231px]">
+        <img
+            src={card.image}
+            alt={card.name}
+            className="h-[152.3px] w-full object-cover md:h-[231px]"
+        />
 
-      <div className="px-3 pb-3 pt-2">
-        <h3 className="font-regular text-[18px] tracking-[2.67px] md:text-center md:text-[40px]/[47px]">
-          {card.name}
-        </h3>
-      </div>
-    </article>
+        <div className="px-3 pb-3 pt-2">
+            <h3 className="font-regular text-[18px] tracking-[2.67px] md:text-center md:text-[40px]/[47px]">
+            {card.name}
+            </h3>
+        </div>
+        </article>
+    </Link>
   );
 };
