@@ -6,7 +6,7 @@ type RestaurantHeroSectionProps = {
 
 const RestaurantHeroSection = ({ restaurant }: RestaurantHeroSectionProps) => {
   return (
-    <section className="w-full h-[272px] md:h-[425px]">
+    <section className="w-full min-h-[272px] md:h-[425px]">
       <img
         src={restaurant.image}
         alt={restaurant.name}
